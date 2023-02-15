@@ -84,9 +84,9 @@ const LineChart = () => {
     );
   };
   return (
-    <div>
+    <div className="p-2 space-y-4">
       <Line data={data} options={options} />
-      <div className="flex gap-4 justify-center">
+      <div className="flex gap-4 justify-center flex-col md:flex-row">
         <input
           type="date"
           className="border px-4 py-1.5 rounded"
