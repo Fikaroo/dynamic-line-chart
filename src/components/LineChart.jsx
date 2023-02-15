@@ -49,7 +49,7 @@ const LineChart = () => {
     "2023-05-01",
   ];
 
-  const [skills, setSkills] = useState<{ x: string; y: number }[]>([]);
+  const [skills, setSkills] = useState([]);
 
   const data = {
     labels: labels,
@@ -63,12 +63,10 @@ const LineChart = () => {
     ],
   };
 
-  const handleTime = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setDate(e.target.value);
-  const handleValue = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setValue(Number(e.target.value));
+  const handleTime = (e) => setDate(e.target.value);
+  const handleValue = (e) => setValue(Number(e.target.value));
 
-  const handleSet = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSet = (e) => {
     if (skills.find(({ x }) => x === date)) {
       const newSkill = skills.map((skill) =>
         skill.x === date ? { x: date, y: value } : skill
